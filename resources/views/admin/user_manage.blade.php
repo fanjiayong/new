@@ -8,8 +8,8 @@
     <th>user_name</th>
     <th>user_email</th>
     <th>user_phone</th>
-    <th>詳細</th>
-    <th>更新</th>
+    <th><a href="{{url('one_coin/user_detail')}}">詳細</a></th>
+    <th><a href="{{url('one_coin/user_refresh')}}">更新</a></th>
   </tr>
 </table>
 <input type="button" name="shinki" value="新規">

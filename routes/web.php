@@ -21,3 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get("one_coin/login","AdminLoginController@login");
 Route::post("one_coin/login","AdminLoginController@login");
+
+Route::get('one_coin/user_manage', function(){return view('admin.user_manage');});
+Route::get('one_coin/user_detail', function(){return view('admin.user_detail');});
+Route::get('one_coin/user_refresh', function(){return view('admin.user_refresh');});
