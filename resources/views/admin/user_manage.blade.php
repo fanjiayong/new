@@ -11,6 +11,18 @@
     <th><a href="{{url('one_coin/user_detail')}}">詳細</a></th>
     <th><a href="{{url('one_coin/user_refresh')}}">更新</a></th>
   </tr>
+  @foreach($items as $item)
+  <tr>
+    <td>{{$item->id}}</td>
+    <td>{{$item->user_name}}</td>
+    <td>{{$item->user_email}}</td>
+    <td>{{$item->user_phone}}</td>
+    <td><a href="{{url('one_coin/user_detail')}}">詳細</a></td>
+    <td><a href="{{url('one_coin/user_refresh')}}">更新</a></td>
+  </tr>
+  @endforeach
+
+
 </table>
-<input type="button" name="shinki" value="新規">
+<a href="{{url('one_coin/user_add')}}">新規</a>
 </html>
