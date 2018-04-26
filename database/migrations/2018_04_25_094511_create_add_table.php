@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateChange1Table extends Migration
+class CreateAddTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateChange1Table extends Migration
      */
     public function up()
     {
-      Schema::table('shops', function (Blueprint $table) {
-          $table->renameColumn('business_men_in', 'business_men_in');
-
-      });
+        Schema::table('shops', function (Blueprint $table) {
+            $table->string('shop_password');
+        });
     }
 
     /**
@@ -26,6 +25,6 @@ class CreateChange1Table extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('change1');
+        Schema::dropIfExists('add');
     }
 }

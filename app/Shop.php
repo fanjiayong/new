@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Shop extends Model
@@ -57,4 +58,13 @@ class Shop extends Model
 
 
     protected $guarded = array('id');
+
+    public function Histories(){
+      return $this->hasMany('App\History');
+    }
+    public function shops_tag(){
+      return $this->hsaOne('APP\Shops_tag');
+    }
+
+
 }

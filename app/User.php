@@ -52,4 +52,10 @@ class User extends Model
 
 
     protected $guarded = array('id');
+
+    public function Histories(){
+      return $this->hasMany('App\History');
+    }
+
+
 }
