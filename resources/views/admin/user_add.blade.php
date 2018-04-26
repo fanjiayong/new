@@ -1,6 +1,15 @@
 <form action="{{ url('one_coin/user_add') }}" method="post">
   {{ csrf_field() }}
   <table>
+    @if(count($errors)>0)
+    <div>
+      <ul>
+          @foreach($errors->all() as $error)
+            <li>{{$error}}</li>
+          @endforeach
+      </ul>
+    </div>
+    @endif
     <tr>
       <td>UserName:</td>
       <td><input type="text" name="user_name" value="{{old('user_name')}}"></td>
