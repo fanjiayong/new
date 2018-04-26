@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<!-- <head>
+ <head>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,11 +8,11 @@
   <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
   <script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
-</head> -->
+</head>
 <body>
 
 <div class="container">
-  <h2>マネジメント登録</h2>
+  <h4>ユーザー登録</h4>
   <form>
     <div class="form-group">
       <label for="name">名前:</label>
@@ -24,7 +24,9 @@
     </div>
     <div class="form-check">
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="button" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">新規作成</button>
+
   </form>
 </div>
 
