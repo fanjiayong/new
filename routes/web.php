@@ -14,6 +14,36 @@
 Route::get('/', function () {
     return view('welcome');
 });
+//user登録画面
+Route::get('user',function(){
+   return view('user/user');
+ });
+
+ //user新規作成
+ Route::get('makeuser',function(){
+    return view('user/makeuser');
+  });
+  //--------------------------------------------------------------------------
+  //homepage
+  Route::get('homepage',function(){
+     return view('user/homepage');
+   });
+//--------------------------------------------------------------------------
+//menu ランチセット
+Route::get('menupage',function(){
+   return view('user/menupage');
+ });
+//login
+Route::get('manlogin',function(){
+   return view('login/manlogin');
+ });
+ //-----------------------------------------
+ //userdeit
+ Route::get('useredit',function(){
+    return view('user/useredit');
+  });
+  //-----------------------------------------
+
 
 Auth::routes();
 
