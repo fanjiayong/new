@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\admin;
+use App\Admin;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -18,11 +18,11 @@ class AdminLoginController extends Controller
       }
       else {
 
-        $this->validate($request, admin::$validate_rules);
+        $this->validate($request, Admin::$validate_rules);
         $name = $request->name;
         $passwrod = $request->password;
 
-        if(Auth::guard('admin')->attempt(['name'=>$name,'password'=>$passwrod])){
+        if(Auth::guard('Admin')->attempt(['name'=>$name,'password'=>$passwrod])){
           return view("admin.home");
         }else{
           return view("admin.login");

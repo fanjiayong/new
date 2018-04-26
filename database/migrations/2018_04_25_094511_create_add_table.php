@@ -14,12 +14,7 @@ class CreateAddTable extends Migration
     public function up()
     {
         Schema::table('shops', function (Blueprint $table) {
-          $table->integer('business_id')->unsigned();
-          $table->foreign('business_id')->references('id')->on('shops');
-        });
-        Schema::table('histories', function (Blueprint $table) {
-          $table->integer('cancle');
-
+            $table->string('shop_password');
         });
     }
 

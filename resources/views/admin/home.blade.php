@@ -1,3 +1,5 @@
-<input type="button" name="user_button" value="ユーザ管理ボタン">
-<input type="button" name="business_button" value="ショップ管理ボタン">
-<input type="button" name="user_button" value="ユーザ管理ボタン">
+
+
+<a href="{{url('one_coin/user_manage')}}">ユーザ管理ボタン</a>
+<a href="{{url('one_coin/shop_manage')}}">ショップ管理ボタン</a>
+<a href="{{url('one_coin/data_manage')}}">統計管理ボタン</a>
