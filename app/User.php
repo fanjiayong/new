@@ -57,5 +57,9 @@ class User extends Model
       return $this->hasMany('App\History');
     }
 
+    // public function getData(){
+    //   return $this->id
+    // }
+
 
 }

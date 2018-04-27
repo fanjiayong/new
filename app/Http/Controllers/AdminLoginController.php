@@ -29,9 +29,12 @@ class AdminLoginController extends Controller
         }
       }
     }
-    public function db(Request $request){
-      $A=DB::select('select name from admins');
-      var_dump($A);
-      eixt();
-    }
+    public function logout(Request $request)
+      {
+        Auth::guard('admin')->logout();
+
+      // $request->session()->invalidate();
+
+      return redirect('one_coin/login');
+      }
 }

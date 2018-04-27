@@ -75,6 +75,8 @@ Route::post("shop/menu_add","ShopController@menu_add");
 Route::get("one_coin/login","AdminLoginController@login");
 Route::post("one_coin/login","AdminLoginController@login");
 
+Route::get("one_coin/logout","AdminLoginController@logout")->middleware(AdminLogin::class);
+
 Route::get('onecoin/add','OnecoinController@add')->middleware(AdminLogin::class);
 Route::post('onecoin/add','OnecoinController@add')->middleware(AdminLogin::class);
 
@@ -98,3 +100,5 @@ Route::get('one_coin/shop_add', function(){return view('admin.shop_add');})->mid
 Route::get('one_coin/menu_refresh', function(){return view('admin.menu_refresh');})->middleware(AdminLogin::class);
 Route::get('one_coin/menu_add', function(){return view('admin.menu_add');})->middleware(AdminLogin::class);
 Route::get('one_coin/data_manage', function(){return view('admin.data_manage');})->middleware(AdminLogin::class);
+Route::get('one_coin/user_find', 'UserManageController@find')->middleware(AdminLogin::class);
+Route::post('one_coin/user_find', 'UserManageController@find')->middleware(AdminLogin::class);

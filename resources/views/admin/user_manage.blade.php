@@ -1,7 +1,12 @@
 <html>
 <h1>ユーザ管理画面</h1>
-  <input type="text" name="user_key" value="検索">
-  <input type="button" name="user_button" value="検索">
+
+
+  <form action="{{url('one_coin/user_find')}}" method="post">
+    {{csrf_field()}}
+    <input type="number" name="input" >
+    <input type="submit" value="find">
+  </form>
 <table border="1">
   <tr>
     <th>ID</th>

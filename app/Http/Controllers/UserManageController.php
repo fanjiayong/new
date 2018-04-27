@@ -73,4 +73,18 @@ class UserManageController extends Controller
 
 
     }
+
+    public function find(Request $request){
+
+      if($request->isMethod('get')){
+        return view('admin.user_find',['input'=>'']);
+      }
+      else{
+        $item = User::find($request->input);
+
+
+        $param =['input'=>$request->input,'item'=>$item];
+        return redirect('admin.user_find',$param);
+      }
+    }
 }
