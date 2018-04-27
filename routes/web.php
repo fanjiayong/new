@@ -14,6 +14,36 @@ use App\Http\Middleware\ShopMiddleware;
 Route::get('/', function () {
     return view('welcome');
 });
+//user登録画面
+Route::get('user',function(){
+   return view('user/user');
+ });
+
+ //user新規作成
+ Route::get('makeuser',function(){
+    return view('user/makeuser');
+  });
+  //--------------------------------------------------------------------------
+  //homepage
+  Route::get('homepage',function(){
+     return view('user/homepage');
+   });
+//--------------------------------------------------------------------------
+//menu ランチセット
+Route::get('menupage',function(){
+   return view('user/menupage');
+ });
+//login
+Route::get('manlogin',function(){
+   return view('login/manlogin');
+ });
+ //-----------------------------------------
+ //userdeit
+ Route::get('useredit',function(){
+    return view('user/useredit');
+  });
+  //-----------------------------------------
+
 
 Auth::routes();
 
@@ -46,8 +76,16 @@ Route::post('onecoin/add','OnecoinController@add');
 
 Route::get('one_coin/user_manage', 'UserManageController@index');
 Route::get('one_coin/user_detail', function(){return view('admin.user_detail');});
-Route::get('one_coin/user_refresh', function(){return view('admin.user_refresh');});
-Route::get('one_coin/user_add', function(){return view('admin.user_add');});
+
+Route::get('one_coin/user_refresh', 'UserManageController@update');
+Route::post('one_coin/user_refresh', 'UserManageController@update');
+
+Route::get('one_coin/user_detail', 'UserManageController@syosai');
+
+
+Route::get('one_coin/user_add','UserManageController@add' );
+Route::post('one_coin/user_add','UserManageController@add' );
+
 Route::get('one_coin/shop_manage', function(){return view('admin.shop_manage');});
 Route::get('one_coin/shop_detail', function(){return view('admin.shop_detail');});
 Route::get('one_coin/shop_menu', function(){return view('admin.shop_menu');});
