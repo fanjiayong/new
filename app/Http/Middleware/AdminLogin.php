@@ -2,6 +2,9 @@
 
 namespace App\Http\Middleware;
 
+use Illuminate\Support\Facades\Auth;
+
+
 use Closure;
 
 class AdminLogin
@@ -15,6 +18,10 @@ class AdminLogin
      */
     public function handle($request, Closure $next)
     {
+      if (Auth::guard('admin')->check()) {
+
         return $next($request);
+      }
+      return redirect('one_coin/login');
     }
 }

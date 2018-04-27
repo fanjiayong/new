@@ -50,8 +50,4 @@ class Handler extends ExceptionHandler
     }
 
 
-    // return redirect()-route('shop/login_2')
-
-
-
 }
