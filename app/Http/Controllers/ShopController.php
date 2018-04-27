@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\DB;
 
 use Illuminate\Support\Facades\File;
 
+use Illuminate\Support\Facades\Hash;
+
+use Illuminate\Support\Facades\Auth;
+
 use App\Shop;
 
 class ShopController extends Controller
@@ -28,19 +32,28 @@ class ShopController extends Controller
 
             $shop->shop_name = $request->shop_name;
 
-            $shop->shop_password = $request->shop_password;
+            $shop->shop_password = Hash::make($request->shop_password);
+
+
+
+            // public function update(Request $request)
+            //     {
+            //         // 验证新密码长度...
+            //
+            //         $request->user()->fill([
+            //             'password' => Hash::make($request->newPassword)
+            //         ])->save();
+            //     }
 
             $shop->shop_address = $request->shop_address;
 
             $shop->shop_phone = $request->shop_phone;
 
+            $shop->shop_photo = $request->file('shop_photo')->store('shop_photo');
 
 
 
-
-
-
-            $shop->shop_photo = $request->shop_photo;
+            // $shop->shop_photo = $request->shop_photo;
 
             $shop->save();
 
@@ -54,6 +67,23 @@ class ShopController extends Controller
           return view('shop.login_2');
 
       }else{
+
+          // $this->validate($request,Shop::$validate_rules);
+          $name = $request->shop_name;
+
+          $password = $request->shop_password;
+
+          if(Auth::guard('shop')->attempt(['shop_name' => $name,'password' => $password])){
+            // 认证通过...
+              // return redirect()->intended('dashboard');
+
+              return view('shop.admin');
+
+            }
+            else{
+              return view("shop.login");
+
+            }
 
       }
     }

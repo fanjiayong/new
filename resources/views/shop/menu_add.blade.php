@@ -2,6 +2,7 @@
     {{ csrf_field() }}
   <title>メニュー増加画面</title>
     <h1>メニュー増加画面</h1>
+    <a href="{{url('shop/login_2')}}">logout</a>
 <table border="1">
     <tr>
       <th>料理名</th>

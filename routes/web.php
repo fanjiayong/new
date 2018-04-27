@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Middleware\ShopMiddleware;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -60,15 +60,20 @@ Route::post("shop/login","ShopController@login");
 Route::get("shop/login_2","ShopController@login_2");
 Route::post("shop/login_2","ShopController@login_2");
 //*********************店舗管理画面******************************:
-Route::get("shop/admin","ShopController@admin");
-Route::post("shop/admin","ShopController@admin");
+Route::get("shop/admin","ShopController@admin")->middleware('auth:shop');
+Route::post("shop/admin","ShopController@admin")->middleware('auth:shop');
 //***********************注目リスト********************************
-Route::get("shop/order","ShopController@order");
-Route::post("shop/order","ShopController@order");
+Route::get("shop/order","ShopController@order")->middleware('auth:shop');
+Route::post("shop/order","ShopController@order")->middleware('auth:shop');
 //************************増加料理メニュー画面*****************************
+<<<<<<< HEAD
+Route::get("shop/menu_add","ShopController@menu_add")->middleware('auth:shop');
+Route::post("shop/menu_add","ShopController@menu_add")->middleware('auth:shop');
+=======
 Route::get("shop/menu_add","ShopController@menu_add");
 Route::post("shop/menu_add","ShopController@menu_add");
 //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+>>>>>>> 2fb826608822eda3b77bc32619fd4c555d53eb80
 
 
 

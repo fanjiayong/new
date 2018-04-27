@@ -21,3 +21,12 @@ $factory->define(App\User::class, function (Faker $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Shop::class, function (Faker $faker) {
+    return [
+        'shop_name' => $faker->name,
+
+        'shop_password' => $shop_password?:$shop_password=bcrypt('secret'),
+        'remember_token' => str_random(10),
+    ];
+});

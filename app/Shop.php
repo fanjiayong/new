@@ -6,11 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Shop extends Model
+class Shop extends Authenticatable
 {
     use SoftDeletes;
-
+    use Notifiable;
+    protected $fillable = ['shop_name','shop_password'];
+    protected $table = 'shops';
     public static $validate_rules = array(
 
         'shop_name' => 'required',
@@ -63,7 +67,14 @@ class Shop extends Model
       return $this->hasMany('App\History');
     }
     public function shops_tag(){
-      return $this->hsaOne('APP\Shops_tag');
+      return $this->hsaOne('APP\Shop_tag');
+    }
+
+
+    public function getAuthPassword () {
+
+      return $this->shop_password;
+
     }
 
 
