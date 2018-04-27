@@ -48,4 +48,10 @@ class Handler extends ExceptionHandler
     {
         return parent::render($request, $exception);
     }
+
+
+    // return redirect()-route('shop/login_2')
+
+
+
 }

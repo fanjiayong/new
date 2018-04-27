@@ -3,6 +3,7 @@
   <title>店舗管理</title>
     <h1>店舗管理画面</h1>
 <a href="{{url('shop/order')}}">即時注文</a>
+<a href="{{url('shop/login_2')}}">logout</a>
 <table border="1">
   <h3>店舗情報</h3>
     <tr>
