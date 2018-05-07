@@ -66,14 +66,14 @@ Route::post("shop/admin","ShopController@admin")->middleware('auth:shop');
 Route::get("shop/order","ShopController@order")->middleware('auth:shop');
 Route::post("shop/order","ShopController@order")->middleware('auth:shop');
 //************************増加料理メニュー画面*****************************
-<<<<<<< HEAD
+
 Route::get("shop/menu_add","ShopController@menu_add")->middleware('auth:shop');
 Route::post("shop/menu_add","ShopController@menu_add")->middleware('auth:shop');
-=======
+
 Route::get("shop/menu_add","ShopController@menu_add");
 Route::post("shop/menu_add","ShopController@menu_add");
 //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
->>>>>>> 2fb826608822eda3b77bc32619fd4c555d53eb80
+
 
 
 
@@ -86,7 +86,7 @@ Route::get('onecoin/add','OnecoinController@add')->middleware(AdminLogin::class)
 Route::post('onecoin/add','OnecoinController@add')->middleware(AdminLogin::class);
 
 Route::get('one_coin/user_manage', 'UserManageController@index')->middleware(AdminLogin::class);
-Route::get('one_coin/user_detail', function(){return view('admin.user_detail');})->middleware(AdminLogin::class);
+// Route::get('one_coin/user_detail', function(){return view('admin.user_detail');})->middleware(AdminLogin::class);
 
 Route::get('one_coin/user_refresh', 'UserManageController@update')->middleware(AdminLogin::class);
 Route::post('one_coin/user_refresh', 'UserManageController@update')->middleware(AdminLogin::class);
@@ -97,11 +97,19 @@ Route::get('one_coin/user_detail', 'UserManageController@syosai')->middleware(Ad
 Route::get('one_coin/user_add','UserManageController@add' )->middleware(AdminLogin::class);
 Route::post('one_coin/user_add','UserManageController@add' )->middleware(AdminLogin::class);
 
-Route::get('one_coin/shop_manage', function(){return view('admin.shop_manage');})->middleware(AdminLogin::class);
-Route::get('one_coin/shop_detail', function(){return view('admin.shop_detail');})->middleware(AdminLogin::class);
+Route::get('one_coin/shop_manage', 'ShopManageController@index')->middleware(AdminLogin::class);
+Route::get('one_coin/shop_detail', 'ShopManageController@detail')->middleware(AdminLogin::class);
+
+Route::get('one_coin/shop_add','ShopManageController@add' )->middleware(AdminLogin::class);
+Route::post('one_coin/shop_add','ShopManageController@add' )->middleware(AdminLogin::class);
+
+
+
+// Route::get('one_coin/shop_manage', function(){return view('admin.shop_manage');})->middleware(AdminLogin::class);
+// Route::get('one_coin/shop_detail', function(){return view('admin.shop_detail');})->middleware(AdminLogin::class);
 Route::get('one_coin/shop_menu', function(){return view('admin.shop_menu');})->middleware(AdminLogin::class);
 Route::get('one_coin/shop_refresh', function(){return view('admin.shop_refresh');})->middleware(AdminLogin::class);
-Route::get('one_coin/shop_add', function(){return view('admin.shop_add');})->middleware(AdminLogin::class);
+// Route::get('one_coin/shop_add', function(){return view('admin.shop_add');})->middleware(AdminLogin::class);
 Route::get('one_coin/menu_refresh', function(){return view('admin.menu_refresh');})->middleware(AdminLogin::class);
 Route::get('one_coin/menu_add', function(){return view('admin.menu_add');})->middleware(AdminLogin::class);
 Route::get('one_coin/data_manage', function(){return view('admin.data_manage');})->middleware(AdminLogin::class);

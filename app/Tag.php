@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Tag extends Model
 {
     //
-    public function Shops_tag(){
-      return $this->hasOne('App\Shops_tag');
+    public function shop_tags(){
+      return $this->hasMany('App\Shop_tag');
     }
 }

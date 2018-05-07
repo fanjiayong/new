@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Shop_tag;
 
 
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -66,8 +67,8 @@ class Shop extends Authenticatable
     public function Histories(){
       return $this->hasMany('App\History');
     }
-    public function shops_tag(){
-      return $this->hsaOne('APP\Shop_tag');
+    public function shop_tags(){
+      return $this->hasMany('App\Shop_tag');
     }
 
 

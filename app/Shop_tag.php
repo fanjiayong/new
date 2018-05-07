@@ -6,8 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Shop_tag extends Model
 {
+
+    protected $table = 'shops_tags';
     //
-    public function Shop(){
+    public function shop(){
       return $this->belongsTo('App\Shop');
     }
     public function tag(){

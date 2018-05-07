@@ -1,24 +1,66 @@
-<form action="{{ url('one_coin/shop_add') }}" method="post">
-  {{ csrf_field() }}
-  <table>
+
+<form  method="POST" action="{{url('one_coin/shop_add')}}" enctype="multipart/form-data">
+    {{ csrf_field() }}
+  <title>店舗申請</title>
+    <h1>店舗申請画面</h1>
+<table border="3">
     <tr>
-      <td>shop_name:</td>
-      <td><input type="text" name="shop_name" value="{{old('shop_name')}}"></td>
+      <th>店舗名</th>
+      <td><input type="text" name="shop_name" value="{{old("shop_name")}}"></td>
+      @if($errors->has('shop_name'))
+      <tr  style="color:red"><th>ERROR</th><td>{{$errors->first('shop_name')}}</td></tr>
+      @endif
+    </tr>
+
+    <tr>
+      <th>パスワード</th>
+      <td><input type="password" name="shop_password" value="{{old("shop_password")}}"></td>
+      @if($errors->has('user_password'))
+      <tr  style="color:red"><th>ERROR</th><td>{{$errors->first('shop_password')}}</td></tr>
+      @endif
+    </tr>
+
+    <tr>
+      <th>パスワード確認</th>
+      <td><input type="password" name="shop_password_confirmation" value="{{old("shop_password_confirmation")}}"></td>
+      @if($errors->has('shop_password'))
+      <tr  style="color:red"><th>ERROR</th><td>{{$errors->first('shop_password')}}</td></tr>
+      @endif
+    </tr>
+
+    <tr>
+        <th>アドレス</th>
+        <td><input type="text" name="shop_address" value="{{old("shop_address")}}"></td>
+        @if($errors->has('shop_address'))
+          <tr  style="color:red"><th>ERROR</th><td>{{$errors->first('shop_address')}}</td></tr>
+        @endif
+    </tr>
+
+    <tr>
+        <th>電話番号</th>
+        <td><input type="text" name="shop_phone" value="{{old("shop_phone")}}"></td>
+        @if($errors->has('shop_phone'))
+        <tr  style="color:red"><th>ERROR</th><td>{{$errors->first('shop_phone')}}</td></tr>
+        @endif
     </tr>
     <tr>
-      <td>address:</td>
-      <td><input type="text" name="shop_address" value="{{old('shop_address')}}"></td>
+        <th>店舗写真</th>
+        <td><input type="file" name="shop_photo" value="{{old("shop_photo")}}"></td>
+        @if($errors->has('shop_photo'))
+        <tr  style="color:red"><th>ERROR</th><td>{{$errors->first('shop_photo')}}</td></tr>
+        @endif
     </tr>
     <tr>
-      <td>phone:</td>
-      <td><input type="text" name="shop_phone" value="{{old('shop_phone')}}"></td>
+      <th>カテゴリ</th>
+      <td>
+        @foreach($tags as $tag)
+        {{$tag->tag_name}}<input type="checkbox" name="tag_ids[]" value="{{$tag->id}}">
+        @endforeach
+      </td>
     </tr>
-    <tr>
-      <td>photo:</td>
-      <td><input type="file" name="shop_photo"></td>
-    </tr>
-  </table>
-  <tr>
-    <input type="submit" value="新規">
-  </tr>
+
+
+</table>
+<br/>
+  <input type="submit" value="提交">
 </form>
