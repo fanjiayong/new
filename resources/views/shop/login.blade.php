@@ -50,7 +50,15 @@
         <tr  style="color:red"><th>ERROR</th><td>{{$errors->first('shop_photo')}}</td></tr>
         @endif
     </tr>
+    <tr>
+        <th>料理种类</th>
+        <td>
+          @foreach($tags as $tag)
+            <input type="checkbox" name="tag_ids[]" value="{{$tag->id}}">{{$tag->tag_name}}
+          @endforeach
+        </td>
 
+    </tr>
 
 </table>
 <br/>

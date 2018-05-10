@@ -60,18 +60,29 @@ Route::post("shop/login","ShopController@login");
 Route::get("shop/login_2","ShopController@login_2");
 Route::post("shop/login_2","ShopController@login_2");
 //*********************店舗管理画面******************************:
-Route::get("shop/admin","ShopController@admin")->middleware('auth:shop');
-Route::post("shop/admin","ShopController@admin")->middleware('auth:shop');
+//---------------------进行登出-----------------------------------
+Route::get('shop/logout', 'ShopController@logout');
+
+Route::get("shop/admin","ShopController@admin")->middleware(ShopMiddleware::class);
+Route::post("shop/admin","ShopController@admin")->middleware(ShopMiddleware::class);
 //***********************注目リスト********************************
-Route::get("shop/order","ShopController@order")->middleware('auth:shop');
-Route::post("shop/order","ShopController@order")->middleware('auth:shop');
+Route::get("shop/order","ShopController@order")->middleware(ShopMiddleware::class);
+Route::post("shop/order","ShopController@order")->middleware(ShopMiddleware::class);
 //************************増加料理メニュー画面*****************************
 
-Route::get("shop/menu_add","ShopController@menu_add")->middleware('auth:shop');
-Route::post("shop/menu_add","ShopController@menu_add")->middleware('auth:shop');
 
-Route::get("shop/menu_add","ShopController@menu_add");
-Route::post("shop/menu_add","ShopController@menu_add");
+
+Route::get("shop/menu_add","ShopController@menu_add")->middleware(ShopMiddleware::class);
+Route::post("shop/menu_add","ShopController@menu_add")->middleware(ShopMiddleware::class);
+//*************************削除料理画面************************************
+Route::get("shop/menu_del","ShopController@menu_del")->middleware(ShopMiddleware::class);
+//*************************更新料理画面*************************************
+Route::get("shop/menu_edit","ShopController@menu_edit")->middleware(ShopMiddleware::class);
+Route::post("shop/menu_edit","ShopController@menu_update")->middleware(ShopMiddleware::class);
+//*************************更新店铺画面**********************************************************
+Route::get("shop/edit","ShopController@edit")->middleware(ShopMiddleware::class);
+Route::post("shop/edit","ShopController@update")->middleware(ShopMiddleware::class);
+
 //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
