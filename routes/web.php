@@ -15,33 +15,45 @@ Route::get('/', function () {
     return view('welcome');
 });
 //user登録画面
-Route::get('user',function(){
-   return view('user/user');
- });
+Route::get('userlogin', 'UserController@getLogin');
+Route::post('userlogin', 'UserController@postLogin');
+//浏览器登陆成功
+Route::get('profile','UserController@profile');
+
 
  //user新規作成
- Route::get('makeuser',function(){
+Route::get('user/makeuser',function(){
     return view('user/makeuser');
   });
+Route::post('user/makeuser', 'UserController@makeuser');
   //--------------------------------------------------------------------------
+//usermessage网页显示
+Route::get('usermessage', function () {
+  return view('user/usermessage');
+  });
+
   //homepage
-  Route::get('homepage',function(){
-     return view('user/homepage');
-   });
+Route::get('user/homepagedata',function(){
+  return view('user/homepagedata');
+  });
+//homepage制作
+ Route::get('user/homepagedata','UserController@homepagedata');
+//homepage_menu設定
+ Route::get('user/homepagemenu/{id}', 'UserController@getmenudisplay');
+
+
 //--------------------------------------------------------------------------
 //menu ランチセット
-Route::get('menupage',function(){
-   return view('user/menupage');
- });
+Route::get('user/homepagemenu','UserController@homepagemenu');
 //login
 Route::get('manlogin',function(){
    return view('login/manlogin');
  });
  //-----------------------------------------
  //userdeit
- Route::get('useredit',function(){
-    return view('user/useredit');
-  });
+ // Route::get('useredit',function(){
+ //    return view('user/useredit');
+ //  });
   //-----------------------------------------
 
 
@@ -52,7 +64,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get("one_coin/login","AdminLoginController@login");
 Route::post("one_coin/login","AdminLoginController@login");
 
-<<<<<<< HEAD
+
 //*********************店舗申請画面******************************:
 Route::get("shop/login","ShopController@login");
 Route::post("shop/login","ShopController@login");
@@ -73,7 +85,7 @@ Route::post("shop/menu_add","ShopController@menu_add");
 
 Route::get('onecoin/add','OnecoinController@add');
 Route::post('onecoin/add','OnecoinController@add');
-=======
+
 Route::get('one_coin/user_manage', 'UserManageController@index');
 Route::get('one_coin/user_detail', function(){return view('admin.user_detail');});
 Route::get('one_coin/user_refresh', function(){return view('admin.user_refresh');});
@@ -86,4 +98,3 @@ Route::get('one_coin/shop_add', function(){return view('admin.shop_add');});
 Route::get('one_coin/menu_refresh', function(){return view('admin.menu_refresh');});
 Route::get('one_coin/menu_add', function(){return view('admin.menu_add');});
 Route::get('one_coin/data_manage', function(){return view('admin.data_manage');});
->>>>>>> c0995dc7e599974635b1e79397a8213cf33dd451

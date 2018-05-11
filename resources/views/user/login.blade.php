@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+
 <html>
  <head>
 
@@ -11,24 +12,26 @@
 </head>
 <body>
 
+
 <div class="container">
-  <h4>ユーザー登録</h4>
-  <form>
+  <h2>ユーザー登録</h2>
+  <form method="post" action="">
+    {{ csrf_field() }}
     <div class="form-group">
-      <label for="name">名前:</label>
-      <input type="text" class="form-control" id="name" placeholder="Enter name">
+      <label for="name">E-mail:</label>
+      <input type="text" class="form-control" id="user_email" name="user_email" >
     </div>
     <div class="form-group">
       <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+      <input type="password" class="form-control" id="user_password" name="user_password">
     </div>
     <div class="form-check">
     </div>
-    <button type="button" class="btn btn-primary">Submit</button>
-    <button type="submit" class="btn btn-primary">新規作成</button>
+    <input type="submit" name="" value="ユーザー登録">
+    <a href="{{url('user/makeuser')}}">新規作成</a>
 
   </form>
 </div>
 
 </body>
-</html>
+</html>  

@@ -3,16 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Homepage</title>
-    <link rel="stylesheet" href="common/js/nivo-slider/themes/tmp/tmp.css">
-    <link rel="stylesheet" href="common/js/nivo-slider/themes/tmp/tmp.css">
-    <link rel="stylesheet" href="common/js/colorbox/colorbox.css">
-
     <link rel="stylesheet" href="{{ URL::asset('css/onecoin_style.css') }}">
-    <script src="common/js/jquery.min.js"></script>
-    <script src="common/js/colorbox/jquery.colorbox-min.js"></script>
-    <script src="common/js/jquery.sticky-kit.min.js"></script>
-    <script src="common/js/jquery.tile.min.js"></script>
-    <script src="common/js/common.js"></script>
+    <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/signin.css') }}">
+
 
     <script>
     jQuery(function() {
@@ -27,14 +21,7 @@
 
     });
     </script>
-    <link rel="stylesheet" href="common/js/colorbox/colorbox.css">
-    <link rel="stylesheet" href="common/css/common.css">
 
-    <script src="common/js/jquery.min.js"></script>
-    <script src="common/js/colorbox/jquery.colorbox-min.js"></script>
-    <script src="common/js/jquery.sticky-kit.min.js"></script>
-    <script src="common/js/jquery.tile.min.js"></script>
-    <script src="common/js/common.js"></script>
 
     <script>
     jQuery(function() {
@@ -51,6 +38,7 @@
     </script>
 </head>
 <body id="top">
+@include('user.toolbar')
 <noscript>
 <p id="noscript">
 </p>
@@ -69,6 +57,7 @@
 </div>
 
 <div id="wrapper">
+
 <div id="mainContent">
 <main>
 <header>
