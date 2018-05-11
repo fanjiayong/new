@@ -2,14 +2,26 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Shop_tag;
 
+use Illuminate\Database\Eloquent\Model;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Shop extends Model
+use Illuminate\Notifications\Notifiable;
+
+use Illuminate\Foundation\Auth\User as Authenticatable;
+
+class Shop extends Authenticatable
 {
     use SoftDeletes;
+
+    use Notifiable;
+
+    protected $rememberTokenName = '';
+    // protected $fillable = ['shop_name','shop_password'];
+
+    protected $table = 'shops';
 
     public static $validate_rules = array(
 
@@ -60,11 +72,26 @@ class Shop extends Model
     protected $guarded = array('id');
 
     public function Histories(){
+
       return $this->hasMany('App\History');
     }
-    public function shops_tag(){
-      return $this->hsaOne('APP\Shops_tag');
+
+    public function shop_tags(){
+      return $this->hasMany('App\Shop_tag');
     }
+
+    public function menus(){
+
+      return $this->hasMany('App\Menu');
+    }
+
+    public function getAuthPassword (){
+
+      return $this->shop_password;
+
+    }
+
+
 
 
 }

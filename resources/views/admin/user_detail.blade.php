@@ -1,11 +1,12 @@
 <html>
 <h1>ユーザ詳細ページ</h1>
+
 <table border="1">
   <tr>
-    <th>ID</th>
-    <th>user_name</th>
-    <th>user_email</th>
-    <th>user_phone</th>
+    <th>{{$id}}</th>
+    <th>{{$user_name}}</th>
+    <th>{{$user_email}}</th>
+    <th>{{$user_phone}}</th>
   </tr>
 </table>
 <br/>

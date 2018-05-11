@@ -21,16 +21,19 @@ class AdminLoginController extends Controller
         $name = $request->name;
         $passwrod = $request->password;
 
-        if(Auth::guard('Admin')->attempt(['name'=>$name,'password'=>$passwrod])){
+        if(Auth::guard('admin')->attempt(['name'=>$name,'password'=>$passwrod])){
           return view("admin.home");
         }else{
           return view("admin.login");
         }
       }
     }
-    public function db(Request $request){
-      $A=DB::select('select name from admins');
-      var_dump($A);
-      eixt();
-    }
+    public function logout(Request $request)
+      {
+        Auth::guard('admin')->logout();
+
+      // $request->session()->invalidate();
+
+      return redirect('one_coin/login');
+      }
 }

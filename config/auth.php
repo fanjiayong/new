@@ -44,9 +44,17 @@ return [
             'driver' => 'session',
             'provider' => 'admins',
         ],
+
         'user' => [
             'driver' => 'session',
             'provider' => 'users',
+        ],
+
+
+        'shop' => [
+          'driver' => 'session',
+          'provider' => 'shops',
+
         ],
 
 
@@ -81,6 +89,10 @@ return [
         'admins' => [
             'driver' => 'eloquent',
             'model' => App\Admin::class,
+        ],
+        'shops' => [
+            'driver' => 'eloquent',
+            'model' => App\Shop::class,
         ],
 
 

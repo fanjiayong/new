@@ -1,8 +1,8 @@
 <form  method="POST" action="{{url('shop/order')}}" enctype="multipart/form-data">
     {{ csrf_field() }}
   <title>注目画面</title>
-    <h1>注文リスト管理画面</h1>
-
+    <h1>注文リスト管理画面</h1><a href="{{url('shop/logout')}}">登出</a>
+<br/>
 <table border="3">
   <tr>
     <th>料理１</th>

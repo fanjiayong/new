@@ -2,12 +2,12 @@
 <h1>ショップ詳細ページ</h1>
 <table border="1">
   <tr>
-    <th>ID</th>
+    <th>{{$id}}</th>
     <th>shop_tag</th>
-    <th>shop_name</th>
-    <th>shop_address</th>
-    <th>shop_phone</th>
-    <th>shop_photo</th>
+    <th>{{$shop_name}}</th>
+    <th>{{$shop_address}}</th>
+    <th>{{$shop_phone}}</th>
+    <th><img src="{{$shop_photo}}" width="75" height="75"></th>
   </tr>
 </table>
 <br/>

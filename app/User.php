@@ -3,7 +3,10 @@
 namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 
@@ -63,8 +66,15 @@ class User extends Authenticatable
       return $this->hasMany('App\History');
     }
 
+
 //关联店铺和显示menu
   class User extends Eloquent {
+
+    // public function getData(){
+    //   return $this->id
+    // }
+
+
 
     protected $table = 'Shops';
 

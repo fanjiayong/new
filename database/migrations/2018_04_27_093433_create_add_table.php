@@ -14,7 +14,8 @@ class CreateAddTable extends Migration
     public function up()
     {
         Schema::table('shops', function (Blueprint $table) {
-            $table->string('shop_password');
+            $table->rememberToken();
+            
         });
     }
 
