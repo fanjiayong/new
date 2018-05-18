@@ -209,13 +209,13 @@ class ShopController extends Controller
 
       return redirect('shop/admin');
     }
-//*******************************店舗情報編集画面*********************************
+//*******************************店舗情報編集画面************************************
     public function edit(Request $request,Response $response){
 
         $shop = Shop::find($request->id);
 
         $tags = Tag::all();
-      
+
         return view('shop.edit',['form' => $shop,"tags" => $tags]);
     }
 //******************************新しい店舗情報挿入SQL*********************************
