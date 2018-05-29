@@ -17,7 +17,7 @@
 <table border="1">
   <tr>
     <th>ID</th>
-    <th>tag_name</th>
+    
     <th>shop_name</th>
     <th>user_name</th>
     <th>menu_name</th>
@@ -28,9 +28,7 @@
   <tr>
     <td>{{$history->history_id}}</td>
 
-    <td>
 
-    </td>
     <td>{{$history->shop_name}}</td>
     <td>{{$history->user_name}}</td>
     <td>{{$history->menu_name}}</td>

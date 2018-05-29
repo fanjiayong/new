@@ -127,7 +127,7 @@ class FindController extends Controller
 
        $histories = $query->simplePaginate(5);
 
-       var_dump(DB::getQueryLog());
+       
        // $shop_ids = [];
        // if($histories){
        //    foreach($histories as $history){
