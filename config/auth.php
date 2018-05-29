@@ -44,11 +44,19 @@ return [
             'driver' => 'session',
             'provider' => 'admins',
         ],
+
+        'user' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+
+
         'shop' => [
           'driver' => 'session',
           'provider' => 'shops',
 
         ],
+
 
         'api' => [
             'driver' => 'token',
@@ -87,10 +95,7 @@ return [
             'model' => App\Shop::class,
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+
     ],
 
     /*

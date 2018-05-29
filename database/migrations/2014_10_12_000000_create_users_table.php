@@ -1,4 +1,4 @@
-s<?php
+<?php
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
@@ -17,7 +17,8 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('user_name');
             $table->string('user_password');
-            $table->string('user_email');
+            $table->rememberToken();            
+            $table->string('user_email')->unique();
             $table->string('user_phone');
             $table->timestamps();
             $table->softDeletes();
@@ -27,7 +28,6 @@ class CreateUsersTable extends Migration
     /**
      * Reverse the migrations.
      *
-     * @return void
      */
     public function down()
     {

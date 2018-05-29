@@ -16,7 +16,7 @@ class ShopMiddleware
     public function handle($request, Closure $next)
     {
       if (Auth::guard('shop')->check()) {
-          return redirect('/home');
+          
           return $next($request);
       }
 

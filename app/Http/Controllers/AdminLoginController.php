@@ -17,7 +17,6 @@ class AdminLoginController extends Controller
 
       }
       else {
-
         $this->validate($request, Admin::$validate_rules);
         $name = $request->name;
         $passwrod = $request->password;
