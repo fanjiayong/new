@@ -2,7 +2,7 @@
     {{ csrf_field() }}
   <title>店舗管理</title>
     <h1>店舗管理画面</h1>
-    <a href="{{url('shop/order')}}">即時注文</a>
+    <!-- <a href="{{url('shop/order')}}">即時注文</a> -->
     <a href="{{url('shop/logout')}}">登出</a>
 
     <table border="1">
