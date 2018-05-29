@@ -87,10 +87,10 @@ class Shop extends Authenticatable
 
 
 
-    public function menus(){
-
-      return $this->hasMany('App\Menu');
-    }
+    // public function menus(){
+    //
+    //   return $this->hasMany('App\Menu');
+    // }
 
     public function getAuthPassword (){
 
