@@ -70,11 +70,20 @@
 
   <table border="1">
     <h3>歴史消費記録</h3>
-    <tr>
-      <td>料理名</td>
-      <td>消費時間</td>
-      <td>消費金額</td>
-    </tr>
+    <tr><td>料理名</td><td>消費金額</td><td>消費時間</td></tr>
+
+    @foreach($item->menus as $menu)
+      @foreach($menu->histories as $history)
+      <tr>
+        <td align="center">{{$menu->menu_name}}</td>
+        <td align="center">{{$menu->menu_price}}円</td>
+        <td align="center">{{$history->created_at}}</td>
+      </tr>
+      @endforeach
+    @endforeach
+
+
   </table>
+
   <br/>
 </form>

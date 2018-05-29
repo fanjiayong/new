@@ -123,11 +123,11 @@ class ShopController extends Controller
       //
       // $item = Shop::orderBy('id','asc');
       // $param = ['item' => $item,'sort' => $sort];
-      $url = Storage::url('file.jpg');
+      // $url = Storage::url('file.jpg');
 
       $item = Shop::find(Auth::guard('shop')->user()->id);
 
-
+      
       // $sort2 = $request->sort2;
       // $item2 = Menu::orderBy('id','asc')->Paginate(3);
       // $param2 = ['items2' => $items2,'sort2' => $sort2];
