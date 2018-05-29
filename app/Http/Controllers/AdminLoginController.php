@@ -23,6 +23,7 @@ class AdminLoginController extends Controller
 
         if(Auth::guard('admin')->attempt(['name'=>$name,'password'=>$passwrod])){
           return view("admin.home");
+
         }else{
           return view("admin.login");
         }

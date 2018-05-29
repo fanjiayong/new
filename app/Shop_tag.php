@@ -11,6 +11,7 @@ class Shop_tag extends Model
 
 {
 
+
   protected $table='shops_tags';
   public static $validate_rules = array(
 
@@ -23,9 +24,10 @@ class Shop_tag extends Model
 
 
     public function shop(){
+
       return $this->belongsTo('App\Shop');
     }
-    public function tag(){
+    public function Tag(){
       return $this->belongsTo('App\Tag');
     }
 }

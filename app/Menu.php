@@ -25,6 +25,8 @@ class Menu extends Model
       return $this->hasMany('App\History');
     }
     public function Shop(){
+
       return $this->belongsto('App\Shop');
     }
+
 }

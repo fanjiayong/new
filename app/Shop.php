@@ -73,12 +73,19 @@ class Shop extends Authenticatable
 
     public function Histories(){
 
+
       return $this->hasMany('App\History');
     }
 
     public function shop_tags(){
+
       return $this->hasMany('App\Shop_tag');
     }
+    public function Menus(){
+      return $this->hasMany('App\Menu');
+    }
+
+
 
     public function menus(){
 

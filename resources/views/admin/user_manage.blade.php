@@ -2,9 +2,12 @@
 <h1>ユーザ管理画面</h1>
 
 
-  <form action="{{url('one_coin/user_find')}}" method="post">
+  <form action="{{url('one_coin/user_manage')}}" method="post">
     {{csrf_field()}}
-    <input type="number" name="input" >
+    ID<input type="text" name="user_id"  >
+    user_name<input type="text" name="user_name" >
+    user_phone<input type="text" name="user_phone"  >
+    user_email<input type="text" name="user_email"  >
     <input type="submit" value="find">
   </form>
 <table border="1">
@@ -29,5 +32,8 @@
 
 
 </table>
+{{ $items->links() }}
 <a href="{{url('one_coin/user_add')}}">新規</a>
+<a href="{{url('one_coin/home')}}">戻る</a>
+
 </html>

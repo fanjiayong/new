@@ -11,6 +11,7 @@ class Tag extends Model
 {
     //
 
+
     use SoftDeletes;
     use Notifiable;
 
@@ -21,6 +22,7 @@ class Tag extends Model
     );
 
     public function Shop_tags(){
+
 
       return $this->hasMany('App\Shop_tag');
     }
