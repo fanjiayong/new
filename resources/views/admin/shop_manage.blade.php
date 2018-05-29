@@ -1,7 +1,13 @@
 <html>
 <h1>ショップ管理画面</h1>
-  <input type="text" name="shop_key" value="検索">
-  <input type="button" name="shop_button" value="検索">
+<form action="{{url('one_coin/shop_manage')}}" method="post">
+  {{csrf_field()}}
+  ID<input type="text" name="shop_id"  >
+  shop_name<input type="text" name="shop_name" >
+  shop_phone<input type="text" name="shop_phone"  >
+
+  <input type="submit" value="find">
+</form>
 <table border="1">
   <tr>
     <th>ID</th>

@@ -1,11 +1,5 @@
 <html>
 
-
-
-
-    <input type="text" name="input"  value="{{$input}}">
-    <input type="submit" value="find">
-  </form>
 <table border="1">
   <tr>
     <th>ID</th>
@@ -15,10 +9,10 @@
   </tr>
 
   <tr>
-    <td>{{$item->id}}</td>
-    <td>{{$item->user_name}}</td>
-    <td>{{$item->user_email}}</td>
-    <td>{{$item->user_phone}}</td>
+    <td>{{$user->id}}</td>
+    <td>{{$user->user_name}}</td>
+    <td>{{$user->user_email}}</td>
+    <td>{{$user->user_phone}}</td>
 
   </tr>
 

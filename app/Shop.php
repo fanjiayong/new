@@ -65,11 +65,17 @@ class Shop extends Authenticatable
     protected $guarded = array('id');
 
     public function Histories(){
-      return $this->hasMany('App\History');
+
+      return $this->hasManyThrough('App\History', 'App\Menu');
     }
-    public function shop_tags(){
+    public function Shop_tags(){
       return $this->hasMany('App\Shop_tag');
     }
+    public function Menus(){
+      return $this->hasMany('App\Menu');
+    }
+
+
 
 
     public function getAuthPassword () {

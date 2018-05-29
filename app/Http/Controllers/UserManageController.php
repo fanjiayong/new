@@ -10,7 +10,8 @@ class UserManageController extends Controller
 {
     //
     public function index(Request $requset){
-      $items = user::all();
+      $items = user::simplePaginate(5);
+      
       return view('admin.user_manage',['items'=>$items]);
     }
 
@@ -62,14 +63,14 @@ class UserManageController extends Controller
     public function syosai(Request $request,Response $response){
 
 
-        $user = User::find($request->id);
-        $param = [
-          'id'=>$user->id,
-          'user_name'=>$user->user_name,
-          'user_email'=>$user->user_email,
-          'user_phone'=>$user->user_phone,
-        ];
-        return view('admin.user_detail',$param);
+        $users = User::find($request->id);
+        // $param = [
+        //   'id'=>$user->id,
+        //   'user_name'=>$user->user_name,
+        //   'user_email'=>$user->user_email,
+        //   'user_phone'=>$user->user_phone,
+        // ];
+        return view('admin.user_detail',['user'=>$users]);
 
 
     }

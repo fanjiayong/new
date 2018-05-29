@@ -9,10 +9,10 @@ class Shop_tag extends Model
 
     protected $table = 'shops_tags';
     //
-    public function shop(){
+    public function Shop(){
       return $this->belongsTo('App\Shop');
     }
-    public function tag(){
+    public function Tag(){
       return $this->belongsTo('App\Tag');
     }
 }
